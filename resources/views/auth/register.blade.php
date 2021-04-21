@@ -12,6 +12,19 @@
                         @csrf
 
                         <div class="form-group row">
+                            <label for="tenant" class="col-md-4 col-form-label text-md-right">Empresa</label>
+
+                            <div class="col-md-6">
+                                <input id="tenant" type="text" class="form-control @error('tenant') is-invalid @enderror" name="tenant" value="{{ old('tenant') }}" required autocomplete="tenant" autofocus>
+
+                                @error('tenant')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
